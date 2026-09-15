@@ -1,5 +1,9 @@
 package org.example.cadastroalunobackend.service;
 
+import lombok.SneakyThrows;
+import org.example.cadastroalunobackend.exceptions.alunoexception.AlunoNullException;
+import org.example.cadastroalunobackend.exceptions.alunoexception.AlunoSemBairroException;
+import org.example.cadastroalunobackend.exceptions.alunoexception.AlunoSemNomeException;
 import org.example.cadastroalunobackend.model.Aluno;
 import org.example.cadastroalunobackend.repository.AlunoRepository;
 import org.springframework.stereotype.Service;
@@ -15,7 +19,19 @@ public class AlunoService {
         this.alunoRepository = alunoRepository;
     }
 
-    public void adicionarAluno(Aluno aluno){
+    @SneakyThrows
+    public void adicionarAluno(Aluno aluno) {
+
+        if(aluno == null) throw new AlunoNullException("ERRO ! Aluno vazio");
+
+        if(aluno.getBairro() == null || aluno.getBairro().isBlank()){
+            throw new AlunoSemBairroException("ERRO ! Aluno sem bairo");
+        }
+
+        if(aluno.getNome() == null || aluno.getNome().isBlank()){
+            throw new AlunoSemNomeException("ERRO ! Aluno sem nome");
+        }
+
         alunoRepository.save(aluno);
     }
 
