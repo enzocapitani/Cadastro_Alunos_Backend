@@ -20,19 +20,19 @@ public class Aluno {
     @Column(nullable = false)
     private String bairro;
 
-    @Column
+    @Column(nullable = false)
     private String curso;
 
-    @Column
-    private LocalDate dataNascimento;
+    @Column(nullable = false)
+    private LocalDate data_nascimento;
 
     protected Aluno(){}
 
-    public Aluno(String nome, String bairro, String curso, LocalDate dataNascimento){
+    public Aluno(String nome, String bairro, String curso, LocalDate data_nascimento){
         this.nome = nome;
         this.bairro = bairro;
         this.curso = curso;
-        this.dataNascimento = dataNascimento;
+        this.data_nascimento = data_nascimento;
     }
 
 }
