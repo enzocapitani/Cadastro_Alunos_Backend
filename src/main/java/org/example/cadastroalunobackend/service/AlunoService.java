@@ -33,6 +33,8 @@ public class AlunoService {
         }
 
         alunoRepository.save(aluno);
+
+        System.out.println("Aluno "+aluno.getNome()+" enviado com sucesso para o repositório");
     }
 
     public List<Aluno> verAlunos(){
