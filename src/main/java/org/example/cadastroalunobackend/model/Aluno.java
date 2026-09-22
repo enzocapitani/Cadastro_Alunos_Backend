@@ -28,7 +28,7 @@ public class Aluno {
 
     protected Aluno(){}
 
-    public Aluno(String nome, String bairro, String curso, LocalDate data_nascimento){
+    public Aluno(String nome, String bairro, LocalDate data_nascimento, String curso){
         this.nome = nome;
         this.bairro = bairro;
         this.curso = curso;
