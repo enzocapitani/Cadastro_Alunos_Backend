@@ -19,7 +19,6 @@ public class AlunoService {
         this.alunoRepository = alunoRepository;
     }
 
-    @SneakyThrows
     public void adicionarAluno(Aluno aluno) {
 
         if(aluno == null) throw new AlunoNullException("ERRO ! Aluno vazio");
