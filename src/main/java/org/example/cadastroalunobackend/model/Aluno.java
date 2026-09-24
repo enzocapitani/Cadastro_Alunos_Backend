@@ -1,12 +1,14 @@
 package org.example.cadastroalunobackend.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
 
 @Entity
+@AllArgsConstructor
 @Getter @Setter
 public class Aluno {
 
@@ -27,12 +29,5 @@ public class Aluno {
     private LocalDate data_nascimento;
 
     protected Aluno(){}
-
-    public Aluno(String nome, String bairro, LocalDate data_nascimento, String curso){
-        this.nome = nome;
-        this.bairro = bairro;
-        this.curso = curso;
-        this.data_nascimento = data_nascimento;
-    }
 
 }
