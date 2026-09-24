@@ -37,7 +37,7 @@ public class AlunoService {
     }
 
     public List<Aluno> verAlunos(){
-        return alunoRepository.findAll();
+        return alunoRepository.retornarOrdenado();
     }
 
 }
